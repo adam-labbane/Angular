@@ -7,21 +7,23 @@ import { SortByDatePipe } from './pipes/product.pipes';
 import { ProductsService,  } from './services/product.service';
 import { TrieService } from './services/trie.service';
 import { FormsModule } from '@angular/forms';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { SearchBarService } from './services/search-bar.service';
+
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, ProductCardComponent, SortByDatePipe, FormsModule],
+  imports: [CommonModule, RouterOutlet, ProductCardComponent, SortByDatePipe, FormsModule, SearchBarComponent],
   template: `
-    <h1>Welcome to {{title}}!</h1>
-    <div>
-      Chercher : <input placeholder="chercher un produit" type="text" id="search" name="search" [(ngModel)]="search"/>
-      La recherche : {{search}}
-    </div>
+    <h1>Welcome to {{this.searchBarService.search}}!</h1>
+    
     <div>
       <b>Trie : </b>
       <button mat-button (click)="ontrie()">{{gettrie()}}</button>
     </div>
-    <app-product-card *ngFor="let product of (products | sortByDate:this.trieServices.trievaleur)" [myProduct]="product"></app-product-card>
+    <app-search-bar></app-search-bar>
+      <app-product-card *ngFor="let product of (products | sortByDate:this.trieServices.trievaleur)" [myProduct]="product"></app-product-card>
     
     <router-outlet></router-outlet>
   `,
@@ -30,15 +32,16 @@ import { FormsModule } from '@angular/forms';
 export class AppComponent implements OnInit {
   products!: Product[];
   title = 'My shop';
-  search: string = '';
-
-  constructor(private productsService: ProductsService, public trieServices: TrieService) {}
+  
+  
+  constructor(private productsService: ProductsService, public trieServices: TrieService, public searchBarService: SearchBarService) {}
 
   ngOnInit(): void {
-    this.search = ""
+    this.products = this.productsService.products
     
-      this.products = this.productsService.products
+    
   }
+  
   gettrie(){
     return this.trieServices.trievaleur
   }
