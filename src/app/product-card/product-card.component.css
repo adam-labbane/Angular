@@ -1,8 +1,13 @@
-.example-card {
-    max-width: 400px;
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux cartes de passer à la ligne si elles ne tiennent pas sur une seule ligne */
+  justify-content: space-between; /* Espacement équitable entre les cartes */
+  gap: 16px; /* Espacement horizontal entre les cartes */
 }
 
-.example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
+.product-card {
+  flex: 1; /* Permet à chaque carte de prendre une part égale de l'espace disponible */
+  max-width: calc(33.33% - 16px); /* Limite la largeur de chaque carte pour s'assurer qu'elles ne se chevauchent pas */
+  box-sizing: border-box; /* Inclut les bordures et les rembourrages dans la largeur spécifiée */
 }

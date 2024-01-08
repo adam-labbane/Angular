@@ -1,35 +1,44 @@
-<div *ngIf="myProduct.title.startsWith(searchBarService.search)">
-<mat-card class="example-card">
-  <span>date de production : {{myProduct.dateadd| date}}</span>
-    <mat-card-header>
+
+<div class="card-container">
+  <div *ngIf="myProduct.title.startsWith(searchBarService.search)" class="product-card">
+
+    <mat-card class="example-card">
+      <span>date de production : {{myProduct.dateadd| date}}</span>
+
+      <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{myProduct.title}}</mat-card-title>
-        <mat-card-subtitle>brosse</mat-card-subtitle></mat-card-header>
-    <img mat-card-image src="{{myProduct.imageUrl}}">
-    <mat-card-content>
-      <p>{{myProduct.description}}</p>
-    </mat-card-content>
-    <mat-card-actions>
-        <div *ngIf="myProduct.size && myProduct.size.length > 0">
-            <label>Choisissez une taille :</label>
-              <select (change)="auChangement($event)">
-                <option value="" disabled selected>Taille</option>
-                <option *ngFor="let item of myProduct.size" value={{item}}>{{item}}</option>
-              </select>
-        </div>
-    </mat-card-actions>
-    <mat-card-actions>
-        <div class="price-likes">
-            <b>{{myProduct.price | currency:'EUR'}}</b>
-            <p>
-                <b>{{myProduct.likes}} </b>
-                <button mat-button (click)="onAddLike()">{{myProduct.btnValue}}</button>
-            </p>
-        </div>  
-    </mat-card-actions>
-</mat-card>
-</div>
+        <mat-card-subtitle>brosse</mat-card-subtitle>
+      </mat-card-header>
 
+      <img mat-card-image src="{{myProduct.imageUrl}}">
+
+      <mat-card-content>
+        <p>{{myProduct.description}}</p>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <div *ngIf="myProduct.size && myProduct.size.length > 0">
+          <label>Choisissez une taille :</label>
+          <select (change)="auChangement($event)">
+            <option value="" disabled selected>Taille</option>
+            <option *ngFor="let item of myProduct.size" value={{item}}>{{item}}</option>
+          </select>
+        </div>
+      </mat-card-actions>
+
+      <mat-card-actions>
+        <div class="price-likes">
+          <b>{{myProduct.price | currency:'EUR'}}</b>
+          <p>
+            <b>{{myProduct.likes}} </b>
+            <button mat-button (click)="onAddLike()">{{myProduct.btnValue}}</button>
+          </p>
+        </div>  
+      </mat-card-actions>
+    </mat-card>
+  </div> 
+</div>
 
 
 

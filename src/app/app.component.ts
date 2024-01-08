@@ -9,6 +9,7 @@ import { TrieService } from './services/trie.service';
 import { FormsModule } from '@angular/forms';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { SearchBarService } from './services/search-bar.service';
+import { style } from '@angular/animations';
 
 
 @Component({
@@ -23,11 +24,12 @@ import { SearchBarService } from './services/search-bar.service';
       <button mat-button (click)="ontrie()">{{gettrie()}}</button>
     </div>
     <app-search-bar></app-search-bar>
-      <app-product-card *ngFor="let product of (products | sortByDate:this.trieServices.trievaleur)" [myProduct]="product"></app-product-card>
+    
+    <app-product-card *ngFor="let product of (products | sortByDate:this.trieServices.trievaleur)" [myProduct]="product"></app-product-card>
     
     <router-outlet></router-outlet>
   `,
-  styles: [],
+  styles: []
 })
 export class AppComponent implements OnInit {
   products!: Product[];
