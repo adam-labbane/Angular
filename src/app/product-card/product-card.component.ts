@@ -9,12 +9,14 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { TrieService } from '../services/trie.service';
 import { SearchBarService } from '../services/search-bar.service';
+import { NgStyle } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [NgIf, NgForOf, MatButtonModule, MatCardModule, MatSelectModule, MatFormFieldModule, CurrencyPipe, UpperCasePipe, DatePipe],
+  imports: [NgIf, NgForOf, MatButtonModule, MatCardModule, MatIconModule, NgStyle, MatSelectModule, MatFormFieldModule, CurrencyPipe, UpperCasePipe, DatePipe],
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.css']
 })

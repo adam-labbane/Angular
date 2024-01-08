@@ -26,10 +26,13 @@
       <mat-card-actions>
         <div class="price-likes">
           <b>{{myProduct.price | currency:'EUR'}}</b>
-          <p>
-            <b>{{myProduct.likes}} </b>
-            <button mat-button (click)="onAddLike()">{{myProduct.btnValue}}</button>
-          </p>
+    
+            
+          <button mat-button (click)="onAddLike()">
+              <mat-icon [ngStyle]="{'color': myProduct.isLiked ? 'red' : 'black'}">favorite</mat-icon>
+           </button>
+           
+
         </div>  
       </mat-card-actions>
       <span>date de production : {{myProduct.dateadd | date:'short'}}</span>
