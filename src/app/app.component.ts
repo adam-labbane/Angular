@@ -16,7 +16,7 @@ import { SearchBarService } from './services/search-bar.service';
   standalone: true,
   imports: [CommonModule, RouterOutlet, ProductCardComponent, SortByDatePipe, FormsModule, SearchBarComponent],
   template: `
-    <h1>Welcome to {{this.searchBarService.search}}!</h1>
+    <h1>Welcome to {{this.title}}!</h1>
     
     <div>
       <b>Trie : </b>
