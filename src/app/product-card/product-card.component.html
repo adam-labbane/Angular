@@ -1,4 +1,4 @@
-
+<div *ngIf="myProduct.title.startsWith(searchBarService.search)">
 <mat-card class="example-card">
   <span>date de production : {{myProduct.dateadd| date}}</span>
     <mat-card-header>
@@ -28,6 +28,7 @@
         </div>  
     </mat-card-actions>
 </mat-card>
+</div>
 
 
 

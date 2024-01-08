@@ -8,6 +8,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { TrieService } from '../services/trie.service';
+import { SearchBarService } from '../services/search-bar.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ import { TrieService } from '../services/trie.service';
 })
 export class ProductCardComponent {
 
-  constructor(private trieService: TrieService) {}
+  constructor(private trieService: TrieService, public searchBarService: SearchBarService) {}
 
 auChangement(event: any) {
   const selectedSize = event.target.value;
