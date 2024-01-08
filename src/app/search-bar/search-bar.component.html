@@ -1,4 +1,10 @@
-<div>
-    Chercher : <input placeholder="chercher un produit" type="text" id="search" name="search" [(ngModel)]="search" (ngModelChange)="onSearchChange($event)" />
-    
+<div class="example-form-container">
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Chercher un produit</mat-label>
+          <input matInput placeholder="chercher un produit" type="text" id="search" name="search" [(ngModel)]="search" (ngModelChange)="onSearchChange($event)"/>
+        </mat-form-field>
+    </form>
 </div>
+
+  

@@ -24,9 +24,9 @@ import { style } from '@angular/animations';
       <button mat-button (click)="ontrie()">{{gettrie()}}</button>
     </div>
     <app-search-bar></app-search-bar>
-    
-    <app-product-card *ngFor="let product of (products | sortByDate:this.trieServices.trievaleur)" [myProduct]="product"></app-product-card>
-    
+    <div class="card-container">
+      <app-product-card *ngFor="let product of (products | sortByDate:this.trieServices.trievaleur)" [myProduct]="product"></app-product-card>
+    </div>
     <router-outlet></router-outlet>
   `,
   styles: []

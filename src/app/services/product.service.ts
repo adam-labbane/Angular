@@ -8,9 +8,9 @@ export class ProductsService {
 
   products: Product[] = [
     new Product(
-      "brosse à dent #1",
-      "brosse a dent naturel",
-      "https://images.unsplash.com/photo-1605615971281-498d939477b3?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      " T-shirt basique en coton",
+      " Un t-shirt essentiel en coton doux qui offre confort et polyvalence. Parfait pour les occasions décontractées, ce t-shirt est un incontournable de toute garde-robe. ",
+      "assets/images/tshirt1.PNG",
       0,
       0,
       false,
@@ -20,16 +20,51 @@ export class ProductsService {
       
     ),
     new Product(
-    "brosse à dent #2",
-      "brosse a dent naturel dans la fausse",
-      "https://images.unsplash.com/photo-1605615923013-f26c14fe7155?q=80&w=1900&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "T-shirt graphique",
+      "Inspiré par la nature, ce t-shirt présente un design artistique représentant des paysages montagneux. Ajoutez une touche d'aventure à votre style quotidien.",
+      "assets/images/tshirt2.PNG",
       0,
       0,
       false,
       "like",
       new Date('2025/2/18'),
       ['M', 'XL', 'S'],
+      ),
+      new Product(
+        "T-shirt vintage à rayures",
+          "Retournez dans le temps avec notre t-shirt vintage à rayures. Avec un design rétro, des couleurs intemporelles et une coupe confortable, ce t-shirt vous donne une allure décontractée et stylée.",
+          "assets/images/tshirt3.PNG",
+          0,
+          0,
+          false,
+          "like",
+          new Date('2025/2/18'),
+          ['M', 'XL', 'S'],
+          ),
+      new Product(
+        "T-shirt en édition limitée",
+        "Exprimez votre côté artistique avec notre t-shirt en édition limitée ",
+        "assets/images/tshirt4.PNG",
+        0,
+        0,
+        false,
+        "like",
+        new Date('2025/2/18'),
+        ['M', 'XL', 'S'],
+        ),
+      new Product(
+        "T-shirt ajusté en jersey de coton",
+        "Découvrez notre t-shirt ajusté en jersey de coton de haute qualité. Sa coupe ajustée offre une silhouette élégante, tandis que le coton doux garantit un confort exceptionnel tout au long de la journée.",
+        "assets/images/tshirt5.PNG",
+        0,
+        0,
+        false,
+        "like",
+        new Date('2025/2/18'),
+        ['M', 'XL', 'S'],
+        ),
       
-  )]
+
+]
 
 }
