@@ -20,12 +20,16 @@ import { style } from '@angular/animations';
     <h1>Welcome to {{this.title}}!</h1>
     
     <div>
-      <b>Trie : </b>
-      <button mat-button (click)="ontrie()">{{gettrie()}}</button>
+      <b>Trie par date : </b>
+      <button mat-button (click)="ontrieDate()">{{this.trieServices.trievaleurDate}}</button>
+    </div>
+    <div>
+      <b>Trie par nom  : </b>
+      <button mat-button (click)="ontrieName()">{{this.trieServices.trievaleurName}}</button>
     </div>
     <app-search-bar></app-search-bar>
     <div class="card-container">
-      <app-product-card *ngFor="let product of (products | sortByDate:this.trieServices.trievaleur)" [myProduct]="product"></app-product-card>
+      <app-product-card *ngFor="let product of (products | sortByDate:this.trieServices.trievaleur:sortOption)" [myProduct]="product"></app-product-card>
     </div>
     <router-outlet></router-outlet>
   `,
@@ -34,6 +38,8 @@ import { style } from '@angular/animations';
 export class AppComponent implements OnInit {
   products!: Product[];
   title = 'My shop';
+  sortOption = 'Date';
+
   
   
   constructor(private productsService: ProductsService, public trieServices: TrieService, public searchBarService: SearchBarService) {}
@@ -44,11 +50,20 @@ export class AppComponent implements OnInit {
     
   }
   
-  gettrie(){
-    return this.trieServices.trievaleur
+
+  ontrieDate(){
+    console.log(this.sortOption)
+    console.log(this.trieServices.trievaleur)
+    console.log(this.trieServices.trievaleurDate)
+    console.log(this.trieServices.trievaleurName)
+    this.sortOption = 'Date'
+    this.trieServices.trieonDate()
+
+
   }
-  ontrie(){
-    this.trieServices.trieon()
+  ontrieName(){
+    this.sortOption = 'Name'
+    this.trieServices.trieonName()
 
   }
   
