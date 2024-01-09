@@ -6,7 +6,7 @@
         <mat-card-title class="product-card-title">{{myProduct.title}}</mat-card-title>
       </mat-card-header>
 
-      <img mat-card-image src="{{myProduct.imageUrl}}">
+      <img mat-card-image src="{{myProduct.imageUrl}}" (click)="toDetail(myProduct.id)">
 
       <mat-card-content class="product-card-content">
         <p  class="product-card-description" [innerHTML]="myProduct.description"></p>

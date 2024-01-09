@@ -1,0 +1,54 @@
+<div class="card-container">
+
+<div class="product-card">
+
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title class="product-card-title">{{selectedProduct.title}}</mat-card-title>
+      </mat-card-header>
+
+      <img mat-card-image src="{{selectedProduct.imageUrl}}">
+
+      <mat-card-content class="product-card-content">
+        <p  class="product-card-description" [innerHTML]="selectedProduct.description"></p>
+      </mat-card-content>
+
+      <mat-card-actions class="product-card-actions">
+        <div *ngIf="selectedProduct.size && selectedProduct.size.length > 0">
+          <mat-label class="product-card-label">Choisissez une taille : </mat-label>
+          <select  class="product-card-select" (change)="auChangement($event)">
+            <option value="" disabled selected>Taille</option>
+            <option *ngFor="let item of selectedProduct.size" value={{item}}>{{item}}</option>
+          </select>
+        </div>
+      </mat-card-actions>
+
+      <div class="example-button-row">
+        <button mat-raised-button color="primary">Acheter</button>
+    </div>
+      <mat-card-actions>
+        <div class="price-likes">
+          <b>{{selectedProduct.price | currency:'EUR'}}</b>
+    
+            
+          <button mat-button (click)="onAddLike()">
+              <mat-icon [ngStyle]="{'color': selectedProduct.isLiked ? 'red' : 'black'}">favorite</mat-icon>
+           </button>
+           
+
+        </div>  
+      </mat-card-actions>
+      <span>date de production : {{selectedProduct.dateadd | date:'short'}}</span>
+    </mat-card>
+
+    
+  </div> 
+
+  <div >
+    <h2>{{selectedProduct.title}}</h2>
+    <p>{{selectedProduct.description}}</p>
+  </div>
+  
+  
+</div>
+

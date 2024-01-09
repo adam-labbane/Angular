@@ -13,7 +13,7 @@ import { FooterComponent } from './footer/footer.component';
   imports: [CommonModule, RouterOutlet,  FormsModule, HeaderComponent, ProductCardListComponent, FooterComponent],
   template: `
     <app-header></app-header>
-    <app-product-card-list></app-product-card-list>
+    
     <router-outlet></router-outlet>
     <app-footer></app-footer>
   

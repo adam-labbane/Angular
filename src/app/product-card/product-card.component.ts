@@ -11,7 +11,7 @@ import { TrieService } from '../services/trie.service';
 import { SearchBarService } from '../services/search-bar.service';
 import { NgStyle } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-card',
@@ -22,7 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class ProductCardComponent {
 
-  constructor(private trieService: TrieService, public searchBarService: SearchBarService) {}
+  constructor(private trieService: TrieService, public searchBarService: SearchBarService, private router: Router) {}
 
 auChangement(event: any) {
   const selectedSize = event.target.value;
@@ -62,6 +62,10 @@ auChangement(event: any) {
     }
 
 
+  }
+
+  toDetail(id : number){
+    this.router.navigate(['Detail', id]);
   }
 
 }

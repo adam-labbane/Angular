@@ -1,6 +1,7 @@
 import { DatePipe } from "@angular/common";
 
 export class Product {
+    public id:number = 0;
     public title: string = "";
     public description: string = "";
     public imageUrl: string = "";
@@ -11,7 +12,8 @@ export class Product {
     public dateadd: Date = new Date;
     public size?: Array<string>;
 
-    constructor(title: string, description: string, imageUrl: string, price: number, likes: number, isLiked: boolean, btnValue: string, dateadd: Date ,size?:Array<string>) {
+    constructor(id: number, title: string, description: string, imageUrl: string, price: number, likes: number, isLiked: boolean, btnValue: string, dateadd: Date ,size?:Array<string>) {
+        this.id = id,
         this.title = title,
         this.description = description,
         this.imageUrl = imageUrl,
