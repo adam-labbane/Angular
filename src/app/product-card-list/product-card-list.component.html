@@ -1,0 +1,12 @@
+<div>
+    <b>Trie par date : </b>
+    <button mat-button (click)="ontrieDate()">{{this.trieServices.trievaleurDate}}</button>
+  </div>
+  <div>
+    <b>Trie par nom  : </b>
+    <button mat-button (click)="ontrieName()">{{this.trieServices.trievaleurName}}</button>
+  </div>
+  <app-search-bar></app-search-bar>
+  <div class="card-container">
+    <app-product-card *ngFor="let product of (products | searchFilter | sortByDate:this.trieServices.trievaleur:sortOption)" [myProduct]="product"></app-product-card>
+</div>

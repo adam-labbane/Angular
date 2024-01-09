@@ -1,0 +1,8 @@
+.app-title {
+    text-align: center;
+    font-size: 2em; /* Taille de police */
+    font-weight: bold; /* Poids de la police (gras) */
+    color: #333; /* Couleur du texte */
+    margin-bottom: 20px; /* Marge en bas pour l'espace */
+    /* Ajoute d'autres styles selon tes préférences */
+}

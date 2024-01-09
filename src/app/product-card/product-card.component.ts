@@ -16,7 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [NgIf, NgForOf, MatButtonModule, MatCardModule, MatIconModule, NgStyle, MatSelectModule, MatFormFieldModule, CurrencyPipe, UpperCasePipe, DatePipe],
+  imports: [NgIf, NgForOf, MatButtonModule, MatCardModule, MatIconModule, NgStyle, MatSelectModule, MatFormFieldModule, CurrencyPipe, UpperCasePipe, DatePipe, ],
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.css']
 })

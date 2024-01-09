@@ -1,71 +1,35 @@
-import { Component, LOCALE_ID, OnInit } from '@angular/core';
-import { CommonModule, DatePipe } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { ProductCardComponent } from './product-card/product-card.component';
-import { Product } from './Models/product.model';
-import { SortByDatePipe } from './pipes/product.pipes';
-import { ProductsService,  } from './services/product.service';
-import { TrieService } from './services/trie.service';
 import { FormsModule } from '@angular/forms';
-import { SearchBarComponent } from './search-bar/search-bar.component';
-import { SearchBarService } from './services/search-bar.service';
-import { style } from '@angular/animations';
+import { HeaderComponent } from './header/header.component';
+import { ProductCardListComponent } from './product-card-list/product-card-list.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, ProductCardComponent, SortByDatePipe, FormsModule, SearchBarComponent],
+  imports: [CommonModule, RouterOutlet,  FormsModule, HeaderComponent, ProductCardListComponent, FooterComponent],
   template: `
-    <h1>Welcome to {{this.title}}!</h1>
-    
-    <div>
-      <b>Trie par date : </b>
-      <button mat-button (click)="ontrieDate()">{{this.trieServices.trievaleurDate}}</button>
-    </div>
-    <div>
-      <b>Trie par nom  : </b>
-      <button mat-button (click)="ontrieName()">{{this.trieServices.trievaleurName}}</button>
-    </div>
-    <app-search-bar></app-search-bar>
-    <div class="card-container">
-      <app-product-card *ngFor="let product of (products | sortByDate:this.trieServices.trievaleur:sortOption)" [myProduct]="product"></app-product-card>
-    </div>
+    <app-header></app-header>
+    <app-product-card-list></app-product-card-list>
     <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  
   `,
   styles: []
 })
 export class AppComponent implements OnInit {
-  products!: Product[];
-  title = 'My shop';
-  sortOption = 'Date';
 
-  
-  
-  constructor(private productsService: ProductsService, public trieServices: TrieService, public searchBarService: SearchBarService) {}
+
 
   ngOnInit(): void {
-    this.products = this.productsService.products
-    
     
   }
   
 
-  ontrieDate(){
-    console.log(this.sortOption)
-    console.log(this.trieServices.trievaleur)
-    console.log(this.trieServices.trievaleurDate)
-    console.log(this.trieServices.trievaleurName)
-    this.sortOption = 'Date'
-    this.trieServices.trieonDate()
 
-
-  }
-  ontrieName(){
-    this.sortOption = 'Name'
-    this.trieServices.trieonName()
-
-  }
   
 
 }
