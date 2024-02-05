@@ -1,0 +1,108 @@
+/* CSS pour la page panier */
+
+.cart-container {
+    display: flex;
+    flex-wrap: wrap;
+   
+    padding: 20px;
+}
+
+.cart-item {
+    max-width: 300px;
+    margin: 10px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cart-item:hover {
+    transform: scale(1.05);
+}
+
+.cart-item img {
+    width: 200px;
+    height: 200px
+}
+
+.cart-item-details {
+    padding: 10px;
+}
+
+.product-card-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.price-likes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.total-price {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.buy-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.buy-button:hover {
+    background-color: #45a049;
+}
+
+.empty-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.5em;
+}
+
+.total-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.total {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.custom-button {
+    font-size: 1.2em;
+    padding: 8px 16px; 
+    margin-bottom: 10px;
+}
+
+.small-fab {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+}
+
+.empty-cart-message {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px; /* Ajuste la marge supérieure selon tes préférences */
+    color: #555; /* Couleur du texte */
+}
+
+.empty-cart-container {
+    display: flex;
+    justify-content: center;
+    
+    height: 100vh;
+}

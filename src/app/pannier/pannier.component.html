@@ -1,0 +1,36 @@
+<div class="empty-cart-container" *ngIf="isCartEmpty">
+    <div class="empty-cart-message">
+        Votre panier est vide
+    </div>
+</div>
+
+<div *ngIf="!isCartEmpty">
+    <div class="cart-container">
+        <div *ngFor="let product of products" class="cart-item">
+          <mat-card-header>
+            <mat-card-title class="product-card-title">{{ product.title }}</mat-card-title>
+          </mat-card-header>
+      
+          <img mat-card-image src="{{ product.imageUrl }}" alt="{{ product.title }}">
+      
+          <div class="cart-item-details">
+            <div class="price-likes">
+              <b>{{ product.price }} €</b>
+            </div>
+            supprimer :
+            <button mat-fab color="primary" class="small-fab" (click)="removeProduct()">
+                <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+    
+        </div>
+      </div>
+    
+      <div class="total-container">
+        <div class="total">Total : {{ total }} €</div>
+        <button mat-raised-button color="primary" class="custom-button" >Confirmer votre commande</button>
+        <button mat-raised-button color="warn" (click)="resetPanier()">Vider le panier</button>
+      </div>
+</div>
+
+

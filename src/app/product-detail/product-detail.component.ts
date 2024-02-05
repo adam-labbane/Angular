@@ -21,6 +21,8 @@ export class ProductDetailComponent implements OnInit{
 
     productId: number = 0;
     selectedProduct!: Product;
+    btn: boolean = true;
+    
 
     constructor(
         private route: ActivatedRoute,
@@ -45,7 +47,6 @@ export class ProductDetailComponent implements OnInit{
               
             )
             });
-        console.log(this.selectedProduct)
     }
 
 
@@ -68,6 +69,8 @@ export class ProductDetailComponent implements OnInit{
       {
         this.selectedProduct.price = 20;
       }
+
+      this.btn = false
     
     }
     
@@ -86,6 +89,12 @@ export class ProductDetailComponent implements OnInit{
         }
     
     
+      }
+
+      addCart(){
+        let arr = localStorage.getItem('panier') ? JSON.parse(localStorage.getItem('panier')!) : [];
+        arr.push(this.selectedProduct);
+        localStorage.setItem('panier', JSON.stringify(arr));
       }
 
 }

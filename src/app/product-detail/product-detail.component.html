@@ -24,8 +24,9 @@
       </mat-card-actions>
 
       <div class="example-button-row">
-        <button mat-raised-button color="primary">Acheter</button>
-    </div>
+        <button [disabled]=btn mat-raised-button color="primary" (click)="addCart()" >Ajouter au panier</button>
+      </div>
+
       <mat-card-actions>
         <div class="price-likes">
           <b>{{selectedProduct.price | currency:'EUR'}}</b>
